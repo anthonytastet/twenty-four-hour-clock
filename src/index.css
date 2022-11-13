@@ -1,3 +1,10 @@
+:root {
+	/* colors */
+	--primary: #f2f2f2;
+	--secondary: #202020;
+	--accent: orangered;
+}
+
 body {
 	box-sizing: border-box;
 	margin: 0;
@@ -24,8 +31,8 @@ code {
 header {
 	width: calc(100% - 2px);
 	padding: 0 0.25em;
-	background-color: #202020;
-	color: #f2f2f2;
+	background-color: var(--secondary);
+	color: var(--primary);
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -44,8 +51,8 @@ main {
 footer {
 	width: calc(100% - 2px);
 	padding: 0 0.25em;
-	background-color: #202020;
-	color: #f2f2f2;
+	background-color: var(--secondary);
+	color: var(--primary);
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -56,91 +63,135 @@ footer {
 	width: 50vh;
 	height: 50vh;
 	border-radius: 50%;
-	border: 3px solid #f2f2f2;
-	background-color: #202020;
-	color: #f2f2f2;
+	border: 3px solid var(--primary);
+	background-color: var(--secondary);
+	color: var(--primary);
 }
 
 .clockFrame .clockDigit {
-	--rotation: 0;
+	--digitRotation: 0;
 	position: absolute;
 	width: 100%;
 	height: 100%;
-	color: orangered;
-	/* background-color: rebeccapurple; */
+	color: var(--accent);
+	font-size: 3vh;
 	text-align: center;
-	transform: rotate(var(--rotation));
+	transform: rotate(var(--digitRotation));
 }
 
 .clockFrame .clockDigit1 {
-	--rotation: calc((360deg / 24) * 1);
+	--digitRotation: calc((360deg / 24) * 1);
 }
 .clockFrame .clockDigit2 {
-	--rotation: calc((360deg / 24) * 2);
+	--digitRotation: calc((360deg / 24) * 2);
 }
 .clockFrame .clockDigit3 {
-	--rotation: calc((360deg / 24) * 3);
+	--digitRotation: calc((360deg / 24) * 3);
 }
 .clockFrame .clockDigit4 {
-	--rotation: calc((360deg / 24) * 4);
+	--digitRotation: calc((360deg / 24) * 4);
 }
 .clockFrame .clockDigit5 {
-	--rotation: calc((360deg / 24) * 5);
+	--digitRotation: calc((360deg / 24) * 5);
 }
 .clockFrame .clockDigit6 {
-	--rotation: calc((360deg / 24) * 6);
+	--digitRotation: calc((360deg / 24) * 6);
 }
 .clockFrame .clockDigit7 {
-	--rotation: calc((360deg / 24) * 7);
+	--digitRotation: calc((360deg / 24) * 7);
 }
 .clockFrame .clockDigit8 {
-	--rotation: calc((360deg / 24) * 8);
+	--digitRotation: calc((360deg / 24) * 8);
 }
 .clockFrame .clockDigit9 {
-	--rotation: calc((360deg / 24) * 9);
+	--digitRotation: calc((360deg / 24) * 9);
 }
 .clockFrame .clockDigit10 {
-	--rotation: calc((360deg / 24) * 10);
+	--digitRotation: calc((360deg / 24) * 10);
 }
 .clockFrame .clockDigit11 {
-	--rotation: calc((360deg / 24) * 11);
+	--digitRotation: calc((360deg / 24) * 11);
 }
 .clockFrame .clockDigit12 {
-	--rotation: calc((360deg / 24) * 12);
+	--digitRotation: calc((360deg / 24) * 12);
 }
 .clockFrame .clockDigit13 {
-	--rotation: calc((360deg / 24) * 13);
+	--digitRotation: calc((360deg / 24) * 13);
 }
 .clockFrame .clockDigit14 {
-	--rotation: calc((360deg / 24) * 14);
+	--digitRotation: calc((360deg / 24) * 14);
 }
 .clockFrame .clockDigit15 {
-	--rotation: calc((360deg / 24) * 15);
+	--digitRotation: calc((360deg / 24) * 15);
 }
 .clockFrame .clockDigit16 {
-	--rotation: calc((360deg / 24) * 16);
+	--digitRotation: calc((360deg / 24) * 16);
 }
 .clockFrame .clockDigit17 {
-	--rotation: calc((360deg / 24) * 17);
+	--digitRotation: calc((360deg / 24) * 17);
 }
 .clockFrame .clockDigit18 {
-	--rotation: calc((360deg / 24) * 18);
+	--digitRotation: calc((360deg / 24) * 18);
 }
 .clockFrame .clockDigit19 {
-	--rotation: calc((360deg / 24) * 19);
+	--digitRotation: calc((360deg / 24) * 19);
 }
 .clockFrame .clockDigit20 {
-	--rotation: calc((360deg / 24) * 20);
+	--digitRotation: calc((360deg / 24) * 20);
 }
 .clockFrame .clockDigit21 {
-	--rotation: calc((360deg / 24) * 21);
+	--digitRotation: calc((360deg / 24) * 21);
 }
 .clockFrame .clockDigit22 {
-	--rotation: calc((360deg / 24) * 22);
+	--digitRotation: calc((360deg / 24) * 22);
 }
 .clockFrame .clockDigit23 {
-	--rotation: calc((360deg / 24) * 23);
+	--digitRotation: calc((360deg / 24) * 23);
 }
 .clockFrame .clockDigit24 {
-	--rotation: calc((360deg / 24) * 24);
+	--digitRotation: calc((360deg / 24) * 24);
+}
+
+.clockFrame .hand {
+	--handRotation: 0;
+	position: absolute;
+	bottom: 50%;
+	left: 50%;
+	z-index: 10;
+	height: 40%;
+	width: 3%;
+	background-color: var(--primary);
+	transform-origin: bottom;
+	transform: translateX(-50%) rotate(calc(var(--handRotation) * 1deg));
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+}
+
+.clockFrame .hand.second {
+	width: 1%;
+	height: 44%;
+	background-color: var(--accent);
+}
+.clockFrame .hand.minute {
+	width: 2%;
+	height: 40%;
+	background-color: var(--primary);
+}
+.clockFrame .hand.hour {
+	width: 3%;
+	height: 30%;
+	background-color: var(--primary);
+}
+
+.clockFrame::after {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	z-index: 11;
+	width: 3%;
+	height: 3%;
+	background-color: var(--primary);
+	transform: translate(-50%, -50%);
+	border-radius: 50%;
 }

@@ -11,6 +11,9 @@ const Content = () => {
 				{currentTime.getSeconds()} !
 			</p>
 			<div className="clockFrame">
+				<div className="hand hour"></div>
+				<div className="hand minute"></div>
+				<div className="hand second"></div>
 				<div className="clockDigit clockDigit1">1</div>
 				<div className="clockDigit clockDigit2">2</div>
 				<div className="clockDigit clockDigit3">3</div>
