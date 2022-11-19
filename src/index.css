@@ -1,26 +1,41 @@
-:root {
-	/* colors */
-	--primary: #f2f2f2;
-	--secondary: #202020;
-	--accent: orangered;
-}
-
-body {
+* {
 	box-sizing: border-box;
 	margin: 0;
-	font-family: "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
-		"Droid Sans", "Helvetica Neue", sans-serif;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+	font-family: "Roboto", "Oxygen", "Ubuntu", "Droid Sans", sans-serif;
+}
+
+:root {
+	/* colors */
+	--first: var(--red);
+	--second: var(--red--dark);
+	--third: var(--red--light);
+	--background: var(--grey);
+	--background--dark: var(--grey--dark);
+	--background--light: var(--grey--light);
+	--accent: var(--orange);
+	/* --black: #0d0d0d; */
+	--black: #0a0a0d;
+	--white: #f2f2f2;
+	--blue: #3370a6;
+	--blue--dark: #2a4359;
+	--blue--bright: #63d8f2;
+	--blue--light: #b6ecf2;
+	--red: #bf2a2a;
+	--red--dark: #400c16;
+	--red--light: #f22929;
+	--orange: #f25835;
+	--grey: #727368;
+	--grey--dark: #1f2126;
+	--grey--light: #a5a6a4;
 }
 
 code {
-	font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-		monospace;
+	font-family: source-code-pro, monospace;
 }
 
 .App {
-	height: calc(100vh - 2px);
+	height: 100vh;
+	width: 100%;
 	margin: auto;
 	display: flex;
 	flex-direction: column;
@@ -29,13 +44,18 @@ code {
 }
 
 header {
-	width: calc(100% - 2px);
+	width: 100%;
 	padding: 0 0.25em;
-	background-color: var(--secondary);
-	color: var(--primary);
+	background-color: var(--background--dark);
+	color: var(--first);
 	display: flex;
-	justify-content: space-between;
+	justify-content: center;
 	align-items: center;
+}
+
+header > * {
+	text-transform: capitalize;
+	color: var(--background--light);
 }
 
 main {
@@ -46,15 +66,16 @@ main {
 	justify-content: center;
 	align-items: center;
 	overflow-y: auto;
+	background-color: var(--background);
 }
 
 footer {
-	width: calc(100% - 2px);
+	width: 100%;
 	padding: 0 0.25em;
-	background-color: var(--secondary);
-	color: var(--primary);
+	background-color: var(--background--dark);
+	color: var(--background--light);
 	display: flex;
-	justify-content: space-between;
+	justify-content: flex-end;
 	align-items: center;
 }
 
@@ -63,9 +84,9 @@ footer {
 	width: 50vh;
 	height: 50vh;
 	border-radius: 50%;
-	border: 3px solid var(--primary);
-	background-color: var(--secondary);
-	color: var(--primary);
+	border: 3px solid var(--background--dark);
+	background-color: var(--background--dark);
+	color: var(--second);
 }
 
 .clockFrame .clockDigit {
@@ -75,6 +96,7 @@ footer {
 	height: 100%;
 	color: var(--accent);
 	font-size: 3vh;
+	font-weight: 900;
 	text-align: center;
 	transform: rotate(var(--digitRotation));
 }
@@ -159,7 +181,7 @@ footer {
 	z-index: 10;
 	height: 40%;
 	width: 3%;
-	background-color: var(--primary);
+	background-color: var(--first);
 	transform-origin: bottom;
 	border-top-left-radius: 3px;
 	border-top-right-radius: 3px;
@@ -173,12 +195,12 @@ footer {
 .clockFrame .hand.minute {
 	width: 2%;
 	height: 40%;
-	background-color: var(--primary);
+	background-color: var(--first);
 }
 .clockFrame .hand.hour {
 	width: 3%;
 	height: 30%;
-	background-color: var(--primary);
+	background-color: var(--background--light);
 }
 
 .clockFrame::after {
@@ -187,9 +209,9 @@ footer {
 	top: 50%;
 	left: 50%;
 	z-index: 11;
-	width: 3%;
+	width: 4%;
 	height: 3%;
-	background-color: var(--primary);
+	background-color: var(--background--light);
 	transform: translate(-50%, -50%);
 	border-radius: 50%;
 }
