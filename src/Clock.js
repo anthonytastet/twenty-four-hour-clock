@@ -6,16 +6,6 @@ const Clock = () => {
 		myMinutes: new Date().getMinutes(),
 		mySeconds: new Date().getSeconds(),
 	};
-	// const [currentTime, setCurrentTime] = useState({ time });
-
-	// const updateTime = () => {
-	// 	time = {
-	// 		myHours: new Date().getHours(),
-	// 		myMinutes: new Date().getMinutes(),
-	// 		mySeconds: new Date().getSeconds(),
-	// 	};
-	// 	setCurrentTime(time);
-	// };
 
 	let secondsRatio = time.mySeconds / 60;
 	let minutesRatio = (secondsRatio + time.myMinutes) / 60;
@@ -36,6 +26,7 @@ const Clock = () => {
 		};
 		setRotation(angle);
 	};
+
 	setInterval(updateAngle, 1000);
 
 	const hourStyle = {
