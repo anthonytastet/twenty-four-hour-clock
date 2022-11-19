@@ -1,54 +1,59 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Clock = () => {
-	const currentTime = new Date();
-	setInterval(setClock(), 1000);
+	let time = {
+		myHours: new Date().getHours(),
+		myMinutes: new Date().getMinutes(),
+		mySeconds: new Date().getSeconds(),
+	};
+	// const [currentTime, setCurrentTime] = useState({ time });
 
-	const hourHand = document.querySelector(".hour");
-	const minuteHand = document.querySelector(".minute");
-	const secondHand = document.querySelector(".second");
+	// const updateTime = () => {
+	// 	time = {
+	// 		myHours: new Date().getHours(),
+	// 		myMinutes: new Date().getMinutes(),
+	// 		mySeconds: new Date().getSeconds(),
+	// 	};
+	// 	setCurrentTime(time);
+	// };
 
-	const secondsRatio = currentTime.getSeconds() / 60;
-	const minutesRatio = (secondsRatio + currentTime.getMinutes()) / 60;
-	const hoursRatio = (minutesRatio + currentTime.getHours()) / 24;
-	const secondsAngle = secondsRatio * 360;
-	const minutesAngle = minutesRatio * 360;
-	const hoursAngle = hoursRatio * 360;
+	let secondsRatio = time.mySeconds / 60;
+	let minutesRatio = (secondsRatio + time.myMinutes) / 60;
+	let hoursRatio = (minutesRatio + time.myHours) / 24;
 
-	const setRotation = (element, rotationAngle) => {
-		element.style.setProperty(
-			"transform",
-			`translateX(-50%) rotate(calc(var(${rotationAngle}) * 1deg)`,
-		);
+	let angle = {
+		secondsAngle: secondsRatio * 360,
+		minutesAngle: minutesRatio * 360,
+		hoursAngle: hoursRatio * 360,
 	};
 
-	const setClock = () => {
-		setRotation(secondHand, secondsAngle);
-		setRotation(minuteHand, minutesAngle);
-		setRotation(hourHand, hoursAngle);
+	const [rotation, setRotation] = useState({ angle });
+	const updateAngle = () => {
+		angle = {
+			secondsAngle: secondsRatio * 360,
+			minutesAngle: minutesRatio * 360,
+			hoursAngle: hoursRatio * 360,
+		};
+		setRotation(angle);
 	};
-	setClock();
+	setInterval(updateAngle, 1000);
+
+	const hourStyle = {
+		transform: `translateX(-50%) rotate(calc(${angle.hoursAngle} * 1deg))`,
+	};
+	const minuteStyle = {
+		transform: `translateX(-50%) rotate(calc(${angle.minutesAngle} * 1deg))`,
+	};
+	const secondStyle = {
+		transform: `translateX(-50%) rotate(calc(${angle.secondsAngle} * 1deg))`,
+	};
 
 	return (
 		<div className="clockFrame">
-			<div
-				className="hand hour"
-				// style={{
-				// 	transform: `translateX(-50%) rotate(calc(var(${hoursAngle}) * 1deg))`,
-				// }}
-			></div>
-			<div
-				className="hand minute"
-				// style={{
-				// 	transform: `translateX(-50%) rotate(calc(var(${minutesAngle}) * 1deg))`,
-				// }}
-			></div>
-			<div
-				className="hand second"
-				// style={{
-				// 	transform: `translateX(-50%) rotate(calc(var(${secondsAngle}) * 1deg))`,
-				// }}
-			></div>
+			<div className="hand hour" style={hourStyle}></div>
+			<div className="hand minute" style={minuteStyle}></div>
+			<div className="hand second" style={secondStyle}></div>
+
 			<div className="clockDigit clockDigit1">1</div>
 			<div className="clockDigit clockDigit2">2</div>
 			<div className="clockDigit clockDigit3">3</div>

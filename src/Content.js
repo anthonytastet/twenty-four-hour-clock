@@ -1,14 +1,27 @@
 import React from "react";
 import Clock from "./Clock";
 
-// import { useState } from "react";
-
 const Content = () => {
-	const currentTime = new Date();
+	// let time = {
+	// 	myHours: new Date().getHours(),
+	// 	myMinutes: new Date().getMinutes(),
+	// 	mySeconds: new Date().getSeconds(),
+	// };
+	// const [currentTime, setCurrentTime] = useState({ time });
 
+	// const updateTime = () => {
+	// 	time = {
+	// 		myHours: new Date().getHours(),
+	// 		myMinutes: new Date().getMinutes(),
+	// 		mySeconds: new Date().getSeconds(),
+	// 	};
+	// 	setCurrentTime(time);
+	// };
+
+	// setInterval(updateTime, 1000);
 	return (
 		<main>
-			<p>secondes {currentTime.getSeconds()}</p>
+			<p>{/* {time.myHours}:{time.myMinutes}:{time.mySeconds} */}</p>
 			<Clock />
 		</main>
 	);
