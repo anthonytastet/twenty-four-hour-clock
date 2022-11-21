@@ -7,6 +7,7 @@
 
 # testing
 /coverage
+src/ClockSave.txt
 
 # production
 /build

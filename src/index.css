@@ -6,20 +6,23 @@
 
 :root {
 	/* colors */
-	--first: var(--red);
-	--second: var(--red--dark);
-	--third: var(--red--light);
+	--first: var(--blue);
+	--second: var(--blue--dark);
+	--third: var(--blue--light);
+	--accent: var(--blue--bright);
 	--background: var(--grey);
 	--background--dark: var(--grey--dark);
 	--background--light: var(--grey--light);
-	--accent: var(--orange);
-	/* --black: #0d0d0d; */
 	--black: #0a0a0d;
 	--white: #f2f2f2;
 	--blue: #3370a6;
 	--blue--dark: #2a4359;
 	--blue--bright: #63d8f2;
 	--blue--light: #b6ecf2;
+	--green: #3d8c27;
+	--green--dark: #597332;
+	--green--light: #98f257;
+	--green--bright: #5ef235;
 	--red: #bf2a2a;
 	--red--dark: #400c16;
 	--red--light: #f22929;
@@ -209,8 +212,8 @@ footer {
 	top: 50%;
 	left: 50%;
 	z-index: 11;
-	width: 4%;
-	height: 3%;
+	width: 5%;
+	height: 5%;
 	background-color: var(--background--light);
 	transform: translate(-50%, -50%);
 	border-radius: 50%;
