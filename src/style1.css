@@ -87,17 +87,21 @@ footer {
 
 .clock__container {
 	position: relative;
-	width: 70%;
-	height: 70%;
+	height: 100%;
+	width: 100%;
+	padding: var(--main);
+	/* border: 1px solid var(--red); */
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
 
 .clock__circle__frame {
-	width: 100%;
-	height: 100%;
+	height: 50%;
+	width: auto;
+	object-fit: contain;
 	transform: rotate(-90deg);
+	/* border: 1px solid var(--red); */
 }
 
 .clock__circle {
@@ -124,14 +128,18 @@ footer {
 	height: fit-content;
 	padding: calc(var(--main) / 6);
 	text-align: center;
-	font-size: calc(var(--main) * 4);
+	font-size: calc(var(--main) * 2.7);
 	color: var(--accent);
 	border: 1px solid var(--background);
 }
 
-.clock__time--numeric .hours {
+.clock__time .hours {
+	flex-grow: 1;
 }
-.clock__time--numeric .minutes {
+.clock__time .minutes {
+	flex-grow: 1;
 }
-.clock__time--numeric .seconds {
+.clock__time .seconds {
+	display: inline;
+	flex-grow: 1;
 }
