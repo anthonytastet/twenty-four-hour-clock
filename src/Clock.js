@@ -38,7 +38,7 @@ const Clock = () => {
 					preserveAspectRatio="xMaxYMid meet"
 					cx="50%"
 					cy="50%"
-					r="40%"
+					r="49.4%"
 					pathLength={360}
 					strokeDasharray={angle.hoursAngle}
 				></circle>

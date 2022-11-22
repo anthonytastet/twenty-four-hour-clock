@@ -6,7 +6,7 @@
 
 :root {
 	/* colors */
-	--first: var(--blue);
+	--first: var(--blue--light);
 	--second: var(--blue--dark);
 	--third: var(--blue--light);
 	--accent: var(--blue--bright);
@@ -17,7 +17,8 @@
 	--white: #f2f2f2;
 	--blue: #3370a6;
 	--blue--dark: #2a4359;
-	--blue--bright: #63d8f2;
+	/* --blue--bright: #63d8f2; */
+	--blue--bright: #80f2e7;
 	--blue--light: #b6ecf2;
 	--green: #3d8c27;
 	--green--dark: #597332;
@@ -26,7 +27,8 @@
 	--red: #bf2a2a;
 	--red--dark: #400c16;
 	--red--light: #f22929;
-	--orange: #f25835;
+	--red--bright: #f23535;
+	--yellow: #f2ce1b;
 	--grey: #727368;
 	--grey--dark: #1f2126;
 	--grey--light: #a5a6a4;
@@ -53,7 +55,6 @@ header {
 	width: 100%;
 	padding: 0 0.25em;
 	background-color: var(--background--dark);
-	color: var(--first);
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -97,11 +98,14 @@ footer {
 }
 
 .clock__circle__frame {
-	height: 50%;
-	width: auto;
+	height: 45vw;
+	width: 45vw;
 	object-fit: contain;
 	transform: rotate(-90deg);
 	/* border: 1px solid var(--red); */
+	border-radius: 50%;
+	background-color: var(--background);
+	box-shadow: 0px 0px 25px 0px var(--background--dark);
 }
 
 .clock__circle {
@@ -128,8 +132,9 @@ footer {
 	height: fit-content;
 	padding: calc(var(--main) / 6);
 	text-align: center;
-	font-size: calc(var(--main) * 2.7);
-	color: var(--accent);
+	/* font-size: calc(var(--main) * 2.7); */
+	font-size: 8.9vw;
+	color: var(--first);
 	border: 1px solid var(--background);
 }
 
