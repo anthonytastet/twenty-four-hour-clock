@@ -4,23 +4,22 @@ import { format } from 'date-fns';
 const Clock = () => {
 	//current date
 	let date = {
-		myDayWord: format(new Date(), 'EEE') + ' .',
-		myDayNumber: format(new Date(), 'dd'),
-		myMonthWord: format(new Date(), 'LLL') + ' .',
+		weekDay: format(new Date(), 'EEE') + '.',
+		monthDay: format(new Date(), 'd'),
+		month: format(new Date(), 'LLL') + '.',
 	};
-	console.log(date);
 
 	//current time
 	let time = {
-		myHours: new Date().getHours(),
-		myMinutes: new Date().getMinutes(),
-		mySeconds: new Date().getSeconds(),
+		hours: format(new Date(), 'HH'),
+		minutes: format(new Date(), 'mm'),
+		seconds: format(new Date(), 'ss'),
 	};
 
 	//angle calculation from numeric time values
-	let secondsRatio = time.mySeconds / 60;
-	let minutesRatio = (secondsRatio + time.myMinutes) / 60;
-	let hoursRatio = (minutesRatio + time.myHours) / 24;
+	let secondsRatio = time.seconds / 60;
+	let minutesRatio = (secondsRatio + time.minutes) / 60;
+	let hoursRatio = (minutesRatio + time.hours) / 24;
 	let angle = {
 		secondsAngle: secondsRatio * 360,
 		minutesAngle: minutesRatio * 360,
@@ -56,15 +55,9 @@ const Clock = () => {
 			<div className='clock__text__container'>
 				<div className='clock__time__container'>
 					<div className='clock__time'>
-						<span className='hours'>
-							{time.myHours < 10 ? '0' + time.myHours : time.myHours}
-						</span>
-						<span className='minutes'>
-							:{time.myMinutes < 10 ? '0' + time.myMinutes : time.myMinutes}
-						</span>
-						<span className='seconds'>
-							:{time.mySeconds < 10 ? '0' + time.mySeconds : time.mySeconds}
-						</span>
+						<span className='hours'>{time.hours}</span>
+						<span className='minutes'>:{time.minutes}</span>
+						<span className='seconds'>:{time.seconds}</span>
 					</div>
 				</div>
 				<a
@@ -73,9 +66,9 @@ const Clock = () => {
 					rel='noopener noreferrer'
 				>
 					<div className='clock__date__container'>
-						<span className='day--word'>{date.myDayWord}</span>
-						<span className='day--number'>{date.myDayNumber}</span>
-						<span className='month--word'>{date.myMonthWord}</span>
+						<span className='day--word'>{date.weekDay}</span>
+						<span className='day--number'>{date.monthDay}</span>
+						<span className='month--word'>{date.month}</span>
 					</div>
 				</a>
 			</div>
