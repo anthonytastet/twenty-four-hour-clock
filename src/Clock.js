@@ -67,11 +67,17 @@ const Clock = () => {
 						</span>
 					</div>
 				</div>
-				<div className='clock__date__container'>
-					<span className='day--word'>{date.myDayWord}</span>
-					<span className='day--number'>{date.myDayNumber}</span>
-					<span className='month--word'>{date.myMonthWord}</span>
-				</div>
+				<a
+					href='https://calendar.google.com/calendar/'
+					target='_blank'
+					rel='noopener noreferrer'
+				>
+					<div className='clock__date__container'>
+						<span className='day--word'>{date.myDayWord}</span>
+						<span className='day--number'>{date.myDayNumber}</span>
+						<span className='month--word'>{date.myMonthWord}</span>
+					</div>
+				</a>
 			</div>
 		</div>
 	);

@@ -37,6 +37,10 @@
 	--main: 1em;
 }
 
+a {
+	text-decoration: none;
+}
+
 code {
 	font-family: source-code-pro, monospace;
 }
@@ -164,7 +168,7 @@ footer {
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
-	align-items: center;
+	align-items: flex-end;
 	gap: 0.5vw;
 }
 
