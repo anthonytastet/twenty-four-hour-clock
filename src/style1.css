@@ -1,7 +1,7 @@
 * {
 	box-sizing: border-box;
 	margin: 0;
-	font-family: "Roboto", "Oxygen", "Ubuntu", "Droid Sans", sans-serif;
+	font-family: 'Roboto', 'Oxygen', 'Ubuntu', 'Droid Sans', sans-serif;
 }
 
 :root {
@@ -117,25 +117,28 @@ footer {
 	stroke-linecap: round;
 }
 
-.clock__time__container {
+.clock__text__container {
 	position: absolute;
-	width: 100%;
-	height: 100%;
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	gap: 3vw;
+}
+
+.clock__time__container {
 }
 
 .clock__time {
 	width: fit-content;
 	height: fit-content;
 	padding: calc(var(--main) / 6);
-	text-align: center;
-	/* font-size: calc(var(--main) * 2.7); */
-	font-size: 8.9vw;
-	color: var(--first);
 	border: 1px solid var(--background);
+	text-align: center;
+	font-size: 10vw;
+	/* font-size: 8.9vw; */
+	font-weight: 200;
+	color: var(--first);
 }
 
 .clock__time .hours {
@@ -146,5 +149,26 @@ footer {
 }
 .clock__time .seconds {
 	display: inline;
-	flex-grow: 1;
+	flex-grow: 0.5;
+	font-size: 4.5vw;
+}
+
+.clock__date__container {
+	width: fit-content;
+	height: fit-content;
+	padding: calc(var(--main) / 6);
+	text-align: center;
+	font-size: 1.5vw;
+	font-weight: 200;
+	color: var(--first);
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	gap: 0.5vw;
+}
+
+.clock__text__container .day--number {
+	font-size: 1.9vw;
+	font-weight: 400;
 }
