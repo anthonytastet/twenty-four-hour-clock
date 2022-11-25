@@ -17,9 +17,9 @@ const Clock = () => {
 	};
 
 	//angle calculation from numeric time values
-	let secondsRatio = time.seconds / 60;
-	let minutesRatio = (secondsRatio + time.minutes) / 60;
-	let hoursRatio = (minutesRatio + time.hours) / 24;
+	let secondsRatio = parseInt(time.seconds) / 60;
+	let minutesRatio = (secondsRatio + parseInt(time.minutes)) / 60;
+	let hoursRatio = (minutesRatio + parseInt(time.hours)) / 24;
 	let angle = {
 		secondsAngle: secondsRatio * 360,
 		minutesAngle: minutesRatio * 360,
