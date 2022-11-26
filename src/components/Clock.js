@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { format } from 'date-fns';
+// import { theme } from './Selector';
 
-const Clock = () => {
+const Clock = ({ theme }) => {
 	//current date
 	let date = {
 		weekDay: format(new Date(), 'EEE') + '.',
@@ -47,26 +48,39 @@ const Clock = () => {
 					preserveAspectRatio='xMaxYMid meet'
 					cx='50%'
 					cy='50%'
-					r='49.4%'
+					r='49.5%'
 					pathLength={360}
 					strokeDasharray={1000}
 					strokeDashoffset={-angle.hoursAngle}
+					stroke={theme}
 				></circle>
 			</svg>
 			<div className='clock__text'>
 				<div className='clock__text--time'>
-					<span className='hours'>{time.hours}</span>
-					<span className='minutes'>:{time.minutes}</span>
-					<span className='seconds'>:{time.seconds}</span>
+					<span className='hours' style={{ color: theme }}>
+						{time.hours}
+					</span>
+					<span className='minutes' style={{ color: theme }}>
+						:{time.minutes}
+					</span>
+					<span className='seconds' style={{ color: theme }}>
+						:{time.seconds}
+					</span>
 				</div>
 				<a
 					className='clock__text--date'
 					href='https://calendar.google.com/calendar/'
 					target='_blank'
 				>
-					<span className='weekday'>{date.weekDay}</span>
-					<span className='monthday'>{date.monthDay}</span>
-					<span className='month'>{date.month}</span>
+					<span className='weekday' style={{ color: theme }}>
+						{date.weekDay}
+					</span>
+					<span className='monthday' style={{ color: theme }}>
+						{date.monthDay}
+					</span>
+					<span className='month' style={{ color: theme }}>
+						{date.month}
+					</span>
 				</a>
 			</div>
 		</div>

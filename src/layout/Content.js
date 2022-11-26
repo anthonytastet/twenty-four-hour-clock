@@ -1,10 +1,10 @@
 import React from 'react';
 import Clock from '../components/Clock';
 
-const Content = () => {
+const Content = ({ theme }) => {
 	return (
 		<main className='main'>
-			<Clock />
+			<Clock theme={theme} />
 		</main>
 	);
 };
