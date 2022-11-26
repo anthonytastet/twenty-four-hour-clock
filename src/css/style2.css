@@ -1,0 +1,198 @@
+:root {
+	/* font size */
+	--font__default: 1vw;
+
+	/* length */
+	--length__default: 1vw;
+
+	/* colors */
+	--first: var(--blue--light);
+	--second: var(--blue--dark);
+	--third: var(--blue--light);
+	--accent: var(--blue--bright);
+	--background: var(--grey);
+	--background--dark: var(--grey--dark);
+	--background--light: var(--grey--light);
+	--black: #0a0a0d;
+	--white: #f2f2f2;
+	--blue: #3370a6;
+	--blue--dark: #2a4359;
+	--blue--bright: #80f2e7;
+	--blue--light: #b6ecf2;
+	--green: #3d8c27;
+	--green--dark: #597332;
+	--green--light: #98f257;
+	--green--bright: #5ef235;
+	--red: #bf2a2a;
+	--red--dark: #400c16;
+	--red--light: #f22929;
+	--red--bright: #f23535;
+	--yellow: #f2ce1b;
+	--grey: #727368;
+	--grey--dark: #1f2126;
+	--grey--light: #a5a6a4;
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	border: none;
+	font-size: var(--font__default);
+	color: var(--accent);
+	font-family: 'Roboto', 'Oxygen', 'Ubuntu', 'Droid Sans', sans-serif;
+	text-decoration: none;
+
+	/* border: 1px solid var(--red--light); */
+}
+
+#root {
+	height: 100vh;
+	width: 100vw;
+}
+
+.App {
+	height: 100%;
+	width: 100%;
+	background-color: var(--black);
+	display: grid;
+	grid-template-columns: repeat(10, 1fr);
+	grid-template-rows: repeat(20, 1fr);
+	gap: calc(var(--length__default) / 2);
+}
+
+.header,
+.main,
+.footer {
+	grid-row: 1/21;
+}
+
+.header {
+	padding: calc(var(--length__default) / 3);
+	grid-column: 1/3;
+	background-color: var(--background--dark);
+	/* display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: repeat(20, 1fr); */
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+	gap: calc(var(--length__default) / 3);
+}
+.header > * {
+	height: fit-content;
+	width: 100%;
+	background-color: rebeccapurple;
+	color: var(--background--light);
+	font-size: calc(var(--font__default) * 1.7);
+	text-transform: capitalize;
+	text-align: center;
+}
+
+.main {
+	padding: calc(var(--length__default) / 3);
+	grid-column: 3/9;
+	background-color: var(--background);
+	/* display: grid;
+	grid-template-columns: repeat(6, 1fr);
+	grid-template-rows: repeat(20, 1fr); */
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: calc(var(--length__default) / 3);
+}
+
+.footer {
+	padding: calc(var(--length__default) / 3);
+	grid-column: 9/11;
+	background-color: var(--background--dark);
+	/* display: grid;
+	grid-template-columns: repeat(1, 1fr);
+	grid-template-rows: repeat(20, 1fr); */
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	align-items: flex-end;
+	gap: calc(var(--length__default) / 3);
+}
+.footer > * {
+	color: var(--background--light);
+	font-size: calc(var(--font__default) * 1.3);
+	text-transform: lowercase;
+}
+
+.clock {
+	position: relative;
+	height: 100%;
+	width: 100%;
+	padding: var(--font__default);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.clock__container {
+	height: 45vw;
+	width: 45vw;
+	transform: rotate(-90deg);
+	border-radius: 50%;
+	background-color: var(--background);
+	box-shadow: 0px 0px 25px 0px var(--background--dark);
+}
+
+.clock__disk {
+	fill: var(--black);
+	fill-opacity: 0.2;
+	stroke: var(--accent);
+	stroke-opacity: 0.8;
+	stroke-width: 6;
+	stroke-linecap: round;
+}
+
+.clock__text {
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 3vw;
+}
+
+.clock__text--time {
+	width: fit-content;
+	height: fit-content;
+	padding: calc(var(--length__default) / 6);
+	border: 1px solid var(--background);
+	font-weight: 200;
+	text-align: center;
+	color: var(--first);
+}
+.clock__text--time * {
+	font-size: calc(var(--font__default) * 11.5);
+}
+.clock__text--time .seconds {
+	font-size: calc(var(--font__default) * 5.5);
+}
+
+.clock__text--date {
+	width: fit-content;
+	height: fit-content;
+	padding: calc(var(--font__default) / 6);
+	text-align: center;
+	color: var(--first);
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: flex-end;
+	gap: 0.8vw;
+}
+.clock__text--date * {
+	font-size: calc(var(--font__default) * 2);
+	font-weight: 200;
+}
+.monthday {
+	font-size: calc(var(--font__default) * 2.2);
+	font-weight: 500;
+}

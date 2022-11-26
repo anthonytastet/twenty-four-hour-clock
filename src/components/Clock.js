@@ -26,6 +26,7 @@ const Clock = () => {
 		hoursAngle: hoursRatio * 360,
 	};
 
+	//set rotation based on angle
 	const [rotation, setRotation] = useState({ angle });
 	const updateAngle = () => {
 		angle = {
@@ -38,10 +39,10 @@ const Clock = () => {
 	setTimeout(updateAngle, 1000);
 
 	return (
-		<div className='clock__container'>
-			<svg className='clock__circle__frame'>
+		<div className='clock'>
+			<svg className='clock__container'>
 				<circle
-					className='clock__circle'
+					className='clock__disk'
 					viewBox='0 0 100 100'
 					preserveAspectRatio='xMaxYMid meet'
 					cx='50%'
@@ -52,24 +53,20 @@ const Clock = () => {
 					strokeDashoffset={-angle.hoursAngle}
 				></circle>
 			</svg>
-			<div className='clock__text__container'>
-				<div className='clock__time__container'>
-					<div className='clock__time'>
-						<span className='hours'>{time.hours}</span>
-						<span className='minutes'>:{time.minutes}</span>
-						<span className='seconds'>:{time.seconds}</span>
-					</div>
+			<div className='clock__text'>
+				<div className='clock__text--time'>
+					<span className='hours'>{time.hours}</span>
+					<span className='minutes'>:{time.minutes}</span>
+					<span className='seconds'>:{time.seconds}</span>
 				</div>
 				<a
+					className='clock__text--date'
 					href='https://calendar.google.com/calendar/'
 					target='_blank'
-					rel='noopener noreferrer'
 				>
-					<div className='clock__date__container'>
-						<span className='day--word'>{date.weekDay}</span>
-						<span className='day--number'>{date.monthDay}</span>
-						<span className='month--word'>{date.month}</span>
-					</div>
+					<span className='weekday'>{date.weekDay}</span>
+					<span className='monthday'>{date.monthDay}</span>
+					<span className='month'>{date.month}</span>
 				</a>
 			</div>
 		</div>

@@ -34,7 +34,7 @@
 	--grey--light: #a5a6a4;
 
 	/* font-size */
-	--main: 1em;
+	--font__default: 1em;
 }
 
 a {
@@ -90,18 +90,18 @@ footer {
 	align-items: center;
 }
 
-.clock__container {
+.clock {
 	position: relative;
 	height: 100%;
 	width: 100%;
-	padding: var(--main);
+	padding: var(--font__default);
 	/* border: 1px solid var(--red); */
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
 
-.clock__circle__frame {
+.clock {
 	height: 45vw;
 	width: 45vw;
 	object-fit: contain;
@@ -112,7 +112,7 @@ footer {
 	box-shadow: 0px 0px 25px 0px var(--background--dark);
 }
 
-.clock__circle {
+.clock__disk {
 	fill: black;
 	fill-opacity: 0.2;
 	stroke: var(--accent);
@@ -121,7 +121,7 @@ footer {
 	stroke-linecap: round;
 }
 
-.clock__text__container {
+.clock__text {
 	position: absolute;
 	display: flex;
 	flex-direction: column;
@@ -130,13 +130,13 @@ footer {
 	gap: 3vw;
 }
 
-.clock__time__container {
+.clock__text--time__container {
 }
 
-.clock__time {
+.clock__text--time {
 	width: fit-content;
 	height: fit-content;
-	padding: calc(var(--main) / 6);
+	padding: calc(var(--font__default) / 6);
 	border: 1px solid var(--background);
 	text-align: center;
 	font-size: 10vw;
@@ -145,22 +145,22 @@ footer {
 	color: var(--first);
 }
 
-.clock__time .hours {
+.clock__text--time .hours {
 	flex-grow: 1;
 }
-.clock__time .minutes {
+.clock__text--time .minutes {
 	flex-grow: 1;
 }
-.clock__time .seconds {
+.clock__text--time .seconds {
 	display: inline;
 	flex-grow: 0.5;
 	font-size: 4.5vw;
 }
 
-.clock__date__container {
+.clock__text--date {
 	width: fit-content;
 	height: fit-content;
-	padding: calc(var(--main) / 6);
+	padding: calc(var(--font__default) / 6);
 	text-align: center;
 	font-size: 1.5vw;
 	font-weight: 200;
@@ -172,7 +172,7 @@ footer {
 	gap: 0.8vw;
 }
 
-.clock__text__container .day--number {
+.clock__text .monthday {
 	font-size: 1.9vw;
 	font-weight: 400;
 }
